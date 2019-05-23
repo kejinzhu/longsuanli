@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache">
+    <title>projectlong</title>
+    <link rel="stylesheet" href="static/css/reset.css" />
+    <link rel="stylesheet" href="static/css/shutter.css" />
+    <link rel="stylesheet" href="static/css/swiper-4.2.2.min.css" />
+   
+  </head>
+  <body>
+    <div id="app"></div>
+ 
+  </body>
+  <script type="text/javascript" src="static/js/jquery.min.js" ></script> 
+	<script type="text/javascript" src="static/js/jquery.color.js" ></script>
+ 
+	<script type="text/javascript" src="static/js/velocity.js" ></script>
+    <script type="text/javascript" src="static/js/shutter.js" ></script>
+    <script type="text/javascript" src="static/js/swiper-4.2.2.min.js"></script>
+   
+  <script>
+  
+  	$(function (){
+//         $("#first").children.eq(1).css('backgroundColor','#6f1bce')
+				$(".nav .butt .a").mouseenter(function(){
+					console.log($(this).children().find(".line"))
+         $(this).children(".line").stop().animate({backgroundColor:'#6f1bce'});
+				$(this).children(".mask").stop().slideDown();
+			}).mouseleave(function (){
+        $(this).children(".line").stop().animate({backgroundColor:'transparent'},1000);
+				$(this).children(".mask").slideUp();
+			})
+		})
+  	
+  	$(function () {
+    	var wei = window.innerWidth;
+    	var hei = window.innerHeight
+      $('.shutter').shutter({
+        shutterW:wei, // 容器宽度
+        shutterH: hei, // 容器高度
+        isAutoPlay: true, // 是否自动播放
+        playInterval: 1000, // 自动播放时间
+        curDisplay: 3, // 当前显示页
+        fullPage:true // 是否全屏展示
+      });
+    });
+  </script>
+</html>
